@@ -1,4 +1,5 @@
 :root {
+  /* text colors */
   --primary-text-color: #212121;
   --text-color: #757575;
   --logo-color: #2196f3;
@@ -6,15 +7,14 @@
   --nav-color: #757575;
   --address-color: #ffffff;
   --contacts-color: rgba(255, 255, 255, 0.6);
-  /* text colors */
+  --networksvg-color: #afb1b8;
 
+  /* background colors */
   --primary-bcg-color: #ffffff;
   --hero-bcg-color: #c4c4c4;
   --footer-bcg-color: #2f303a;
   --section-bcg-color: #f5f4fa;
   --herohover-bcg-color: #188ce8;
-  --active-page-color: #2196f3;
-  /* background colors */
 
   --outline: 1px solid tomato;
 }
@@ -117,7 +117,8 @@ img {
 }
 
 .contact-list .contact {
-  display: block;
+  display: flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -127,6 +128,16 @@ img {
 
   letter-spacing: 0.02em;
   text-decoration: none;
+}
+
+.contact-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.contact-icon:hover,
+.contact-icon:focus {
+  fill: var(--accent-color);
 }
 
 .contact-list .contact:hover,
@@ -139,7 +150,11 @@ img {
 }
 
 .link.active-page {
-  color: var(--active-page-color);
+  color: var(--accent-color);
+}
+
+.header-icon {
+  margin-right: 10px;
 }
 
 /* studio page styles */
@@ -180,8 +195,6 @@ img {
   min-width: 200px;
   padding: 10px 32px;
 
-  /* margin-bottom: 200px; */
-
   border: none;
   border-radius: 4px;
 
@@ -208,11 +221,6 @@ img {
   background-color: var(--herohover-bcg-color);
   color: var(--address-color);
 }
-
-/* .hero-button:active {
-  background-color: #5faeee;
-  color: var(--address-color);
-} */
 
 /* features, work, team sections */
 .hidden {
@@ -270,10 +278,6 @@ img {
   text-align: center;
 }
 
-.icon {
-  /* background-position: center; */
-}
-
 .feature-list .title {
   margin-top: 0;
   margin-bottom: 10px;
@@ -315,6 +319,7 @@ img {
 
 .team-list {
   display: flex;
+  background-color: var(--primary-bcg-color);
 }
 
 .team-list .element {
@@ -335,7 +340,7 @@ img {
 }
 .team {
   margin-top: 0px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 
   font-weight: 500;
   font-size: 16px;
@@ -345,8 +350,8 @@ img {
 }
 
 .team-list .text {
-  margin-top: 10px;
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
 
   color: var(--text-color);
 
@@ -354,6 +359,68 @@ img {
   line-height: 1.19;
 
   text-align: center;
+}
+
+.network-list {
+  display: flex;
+  justify-content: center;
+}
+
+.network-list .network-element {
+  margin-right: 10px;
+}
+
+.network-list :last-child {
+  margin-right: 0;
+}
+
+.social-network {
+  display: block;
+
+  padding-top: 12px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background-color: var (--primary-bcg-color);
+  text-align: center;
+
+  fill: var(--networksvg-color);
+}
+
+.social-network:hover,
+.social-network:focus {
+  background-color: var(--accent-color);
+  fill: var(--address-color);
+}
+
+/* section clients */
+.clients-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client {
+  display: block;
+
+  padding-top: 16px;
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  background-color: var(--primary-bcg-color);
+  text-align: center;
+
+  fill: var(--networksvg-color);
+}
+
+.client:hover,
+.client:focus {
+  border: 1px solid #2196f3;
+  fill: var(--accent-color);
 }
 
 /* portfolio page styles */
@@ -403,16 +470,9 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* .portfolio-buttons .btn:active {
-  color: var(--address-color);
-  background-color: #5faeee;
-
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-} */
 
 .btn.active-filter {
-  background-color: var(--active-page-color);
+  background-color: var(--accent-color);
   color: var(--address-color);
 }
 
@@ -425,6 +485,8 @@ img {
   max-width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+
+  cursor: pointer;
 }
 
 .portfolio-list .element:hover {
@@ -481,6 +543,10 @@ img {
   background-color: var(--footer-bcg-color);
 }
 
+.address-div {
+  margin-right: 86px;
+}
+
 .footer .logo {
   margin-right: 0;
 }
@@ -508,4 +574,54 @@ img {
 
 .address-list .element:not(:last-child) {
   margin-bottom: 9px;
+}
+
+/* Corporate networks styles */
+.footer-flex {
+  display: flex;
+  align-items: baseline;
+}
+
+.motto {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--address-color);
+}
+
+.footernetwork-list {
+  display: flex;
+}
+
+.footernetwork-list .element {
+  margin-right: 10px;
+}
+
+.footernetwork-list .element:last-child {
+  margin-right: 0;
+}
+
+.footernetwork-link {
+  display: block;
+
+  padding-top: 12px;
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+
+  fill: var(--address-color);
+}
+
+.footernetwork-link:hover,
+.footernetwork-link:focus {
+  background-color: var(--accent-color);
+  fill: var(--address-color);
 }
