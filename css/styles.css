@@ -269,13 +269,14 @@ img {
 }
 
 .feature-icons {
+  display: flex;
   margin-bottom: 30px;
-  padding-top: 25px;
-  width: 270px;
   height: 120px;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 4px;
   background-color: var(--section-bcg-color);
-  text-align: center;
 }
 
 .feature-list .title {
@@ -319,12 +320,13 @@ img {
 
 .team-list {
   display: flex;
-  background-color: var(--primary-bcg-color);
 }
 
 .team-list .element {
   width: 270px;
   margin-right: 30px;
+
+  background-color: var(--primary-bcg-color);
 
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -375,16 +377,16 @@ img {
 }
 
 .social-network {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  padding-top: 12px;
   width: 44px;
   height: 44px;
 
   border-radius: 50%;
 
   background-color: var (--primary-bcg-color);
-  text-align: center;
 
   fill: var(--networksvg-color);
 }
@@ -402,9 +404,10 @@ img {
 }
 
 .client {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  padding-top: 16px;
   width: 170px;
   height: 92px;
 
@@ -412,7 +415,6 @@ img {
   border-radius: 4px;
 
   background-color: var(--primary-bcg-color);
-  text-align: center;
 
   fill: var(--networksvg-color);
 }
@@ -489,14 +491,15 @@ img {
   cursor: pointer;
 }
 
-.portfolio-list .element:hover {
-  border: 1px solid #eeeeee;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+
+  color: currentColor;
 }
 
-.portfolio-list .element:focus {
-  border: 1px solid #eeeeee;
+.portfolio-link:hover,
+.portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -606,17 +609,16 @@ img {
 }
 
 .footernetwork-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  padding-top: 12px;
   width: 44px;
   height: 44px;
 
   border-radius: 50%;
 
   background-color: rgba(255, 255, 255, 0.1);
-  text-align: center;
-
   fill: var(--address-color);
 }
 
